@@ -12,31 +12,39 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
-package main.org.jdob;
 
-import java.io.File;
-import java.io.IOException;
+package main.org.jdob.application.obber.classname;
 
-import main.org.jdob.application.Constants;
+import org.objectweb.asm.ClassVisitor;
+
+import main.org.jdob.application.io.ClassIO;
 import main.org.jdob.application.io.FileStream;
+import main.org.jdob.application.obber.Transformer;
 
 /**
  * @author Jordan Abraham <jordan.abraham1997@gmail.com>
  */
-public final class JDOB {
+public final class ClassNameTransformer extends Transformer {
 
 	/**
-	 * Starts the application.
-	 * @param args Runtime arguments.
+	 * Constructs a new object.
+	 * @param fileStream This is the {@link FileStream} created with the input file.
+	 * @param classVisitor The {@link ClassVisitor} used along with the {@link ClassIO}.
 	 */
-	public static void main(String[] args) {
-		try {
-			File file = new File(Constants.REPOSITORY_DIRECTORY + "/" + Constants.INPUT_FILE + Constants.ALLOWED_EXTENSION);
-			FileStream stream = new FileStream(file);
-			stream.parseTransformers();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public ClassNameTransformer(FileStream fileStream, ClassVisitor classVisitor) {
+		super(fileStream, classVisitor);
+	}
+
+	@Override
+	public void read() {
+		// TODO Auto-generated method stub
+		super.read();
+	}
+
+	@Override
+	public void write() {
+		// TODO Auto-generated method stub
+		super.write();
 	}
 
 }

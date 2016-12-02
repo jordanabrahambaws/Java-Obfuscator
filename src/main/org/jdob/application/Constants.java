@@ -12,31 +12,33 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
-package main.org.jdob;
 
-import java.io.File;
-import java.io.IOException;
-
-import main.org.jdob.application.Constants;
-import main.org.jdob.application.io.FileStream;
+package main.org.jdob.application;
 
 /**
  * @author Jordan Abraham <jordan.abraham1997@gmail.com>
  */
-public final class JDOB {
+public final class Constants {
 
 	/**
-	 * Starts the application.
-	 * @param args Runtime arguments.
+	 * The directory for the repository for which server data can be found.
 	 */
-	public static void main(String[] args) {
-		try {
-			File file = new File(Constants.REPOSITORY_DIRECTORY + "/" + Constants.INPUT_FILE + Constants.ALLOWED_EXTENSION);
-			FileStream stream = new FileStream(file);
-			stream.parseTransformers();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	public static final String REPOSITORY_DIRECTORY = "./repo/";
+
+	/**
+	 * The set name of the input file should be. This is specific because we need to keep a constant so random
+	 * files aren't attempted for obfuscation.
+	 */
+	public static final String INPUT_FILE = "input";
+
+	/**
+	 * The set name of the output file.
+	 */
+	public static final String OUTPUT_FILE = "output";
+
+	/**
+	 * The allowed extension of the input and output files.
+	 */
+	public static final String ALLOWED_EXTENSION = ".jar";
 
 }
