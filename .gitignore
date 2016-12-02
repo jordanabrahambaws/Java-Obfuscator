@@ -1,0 +1,6 @@
+# IGNORE LIST
+/bin/
+/target/
+pom.xml
+*.project
+/.settings/
